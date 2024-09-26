@@ -7,44 +7,48 @@
     <title>Yes</title>
 </head>
 <body>
-    <div id="DisplayDiv">
+    <div class="DisplayDiv">
         <span>Time left: </span><span id="TimeLeft">300</span><span>s</span>
     </div>
     <br>
     <div class="Line"></div>
     <br>
-    <div id="DisplayDiv">
+    <div class="DisplayDiv">
         <span>Cheese: </span><span id="CheeseCount">0</span><span>lbs</span>
         <br>
         <span>Milk: </span><span id="MilkCount">50</span><span>gals</span>
 		<br>
-        <span>Chocolate Milk: </span><span id="ChocoMilkCount">0</span><span>gals</span>
-        <br>
+        <div id="ChocoCowDiv">
+            <span>Chocolate Milk: </span><span id="ChocoMilkCount">0</span><span>gals</span>
+            <br>
+        </div>
         <button onclick="MakeCheeseFunc()">Make Cheese</button>
     </div>
     <br>
     <div class="Line"></div>
     <br>
 	<div class="CowDiv">
-		<div id="DisplayDiv">
+		<div class="DisplayDiv">
 			<span>Cows: </span><span id="CowCount">1</span>
 			<br>
 			<button onclick="MilkCowFunc()">Milk Cow</button>
 			<br>
 			<button onclick="BuyCowFunc()">Buy Cow</button><span> Cost: </span><span id="PriceCow">10</span><span>lb of cheese</span>
 		</div>
-		<div id="DisplayDiv">
-			<span>Chocolate Cows: </span><span id="ChocoCowCount">0</span>
-			<br>
-			<button onclick="MilkChocoCowFunc()">Milk Chocolate Cow</button>
-			<br>
-			<button onclick="BuyChocoCowFunc()">Buy Chocolate Cow</button><span> Cost: </span><span id="PriceChocoCow">100</span><span>lb of cheese</span>
+		<div class="DisplayDiv">
+            <div id="ChocoCowDiv">
+                <span>Chocolate Cows: </span><span id="ChocoCowCount">0</span>
+                <br>
+                <button onclick="MilkChocoCowFunc()">Milk Chocolate Cow</button>
+                <br>
+                <button onclick="BuyChocoCowFunc()">Buy Chocolate Cow</button><span> Cost: </span><span id="PriceChocoCow">100</span><span>lb of cheese</span>
+            </div>
 		</div>
 	</div>
     <br>
     <div class="Line"></div>
     <br>
-		<div id="DisplayDiv">
+		<div class="DisplayDiv">
 			<span>Cheese/second: </span><span id="CheesePerSecond"></span>
 			<br>
 			<span>CheeseMakers: </span><span id="CheeseMakerCount">0</span>

@@ -8,7 +8,7 @@ body {
     cursor: default;
 }
 
-#DisplayDiv {
+.DisplayDiv {
     font-weight: 900;
     font-size: larger;
     line-height: 175%;
@@ -43,8 +43,7 @@ button:active {
     background-color: #202028;
     color: #888;
 }
-
-/*button:focus {
+.button:focus {
 	border: none;
     outline-style: solid;
     outline-color: #b0b0b0;
@@ -52,7 +51,7 @@ button:active {
     border-radius: max(1vw, 1vh);
     background-color: #808080;
     color: #fff;
-}*/
+}
 
 .Line {
     width: calc(100% - 8px);
@@ -69,7 +68,7 @@ button:active {
 	border: 2px solid #808080;
 }
 
-.CowDiv #DisplayDiv {
+.CowDiv .DisplayDiv {
     display: inline-block; /* Align items horizontally */
     padding: 8px; /* Optional: Add some padding for aesthetics */
     white-space: nowrap; /* Prevent content from wrapping */
