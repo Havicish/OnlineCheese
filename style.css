@@ -73,3 +73,7 @@ button:active {
     padding: 8px; /* Optional: Add some padding for aesthetics */
     white-space: nowrap; /* Prevent content from wrapping */
 }
+
+.Space {
+    height: 5px;
+}

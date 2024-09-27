@@ -1,4 +1,5 @@
 let Cheese = 0;
+let ChocoCheese = 0;
 let Milk = 50;
 let ChocoMilk = 0;
 let Cows = 1;
@@ -21,7 +22,7 @@ function ShowUnlocks() {
         if (!ChocoCowUnlocked) {
             element.style.display = "none";
         } else {
-            element.style.display = "default";
+            element.style.display = "block";
         }
     });
 }
@@ -36,6 +37,15 @@ function MakeCheeseFunc() {
         Milk--;
         Get("CheeseCount").innerText = Math.round(Cheese);
         Get("MilkCount").innerText = Math.round(Milk);
+    }
+}
+
+function MakeChocoCheeseFunc() {
+    if (Math.round(ChocoMilk) > 0) {
+        ChocoCheese++;
+        ChocoMilk--;
+        Get("ChocoCheeseCount").innerText = Math.round(ChocoCheese);
+        Get("ChocoMilkCount").innerText = Math.round(ChocoMilk);
     }
 }
 
@@ -86,7 +96,7 @@ setInterval(() => {
     if (Math.round(Cheese) == 3621)
         Get("CheeseCount").innerText = "E621";
 
-    if (Cheese >= 100)
+    if (Math.round(Cheese) >= 100)
         ChocoCowUnlocked = true
     ShowUnlocks()
 
