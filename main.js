@@ -9,17 +9,28 @@ let CheeseMakers = 0;
 let PriceCheeseMaker = 20;
 let ChocoCows = 0;
 let PriceChocoCow = 100;
+let SpecCows = 0;
 
 let ChocoCowUnlocked = false;
+let SpecCowUnlocked = true;
 
 document.addEventListener("DOMContentLoaded", () => {
     ShowUnlocks()
 });
 
 function ShowUnlocks() {
-    const elements = document.querySelectorAll("#ChocoCowDiv");
+    let elements = document.querySelectorAll("#ChocoCowDiv");
     elements.forEach(element => {
         if (!ChocoCowUnlocked) {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    });
+
+    elements = document.querySelectorAll("#SpecCowDiv");
+    elements.forEach(element => {
+        if (!SpecCowUnlocked) {
             element.style.display = "none";
         } else {
             element.style.display = "block";
@@ -90,11 +101,23 @@ function BuyCheeseMakerFunc() {
 	}
 }
 
+function FeedCowFunc() {
+
+}
+
+function KillSpecCowFunc() {
+    if (SpecCows > 0) {
+        SpecCows--;
+    }
+}
+
 setInterval(() => {
     Get("CheeseCount").innerText = Math.round(Cheese);
     Get("MilkCount").innerText = Math.round(Milk);
     if (Math.round(Cheese) == 3621)
         Get("CheeseCount").innerText = "E621";
+
+
 
     if (Math.round(Cheese) >= 100)
         ChocoCowUnlocked = true
