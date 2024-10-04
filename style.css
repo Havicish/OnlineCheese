@@ -24,6 +24,16 @@ button {
     color: #fff;
 }
 
+button:focus {
+	border: none;
+    outline-style: solid;
+    outline-color: #6060b0;
+    outline-width: 4px;
+    border-radius: max(1vw, 1vh);
+    background-color: #202028;
+    color: #fff;
+}
+
 button:hover {
     border: none;
     outline-style: solid;
@@ -43,15 +53,6 @@ button:active {
     background-color: #202028;
     color: #888;
 }
-.button:focus {
-	border: none;
-    outline-style: solid;
-    outline-color: #b0b0b0;
-    outline-width: 4px;
-    border-radius: max(1vw, 1vh);
-    background-color: #808080;
-    color: #fff;
-}
 
 .Line {
     width: calc(100% - 8px);
@@ -60,7 +61,7 @@ button:active {
     display: block;
 }
 
-.CowDiv {
+.ScrollDiv {
     width: calc(100% - 8px); /* Set the desired width of the scrolling area */
     overflow-x: scroll; /* Enable horizontal scrolling */
     overflow-y: hidden; /* Prevent vertical scrolling */
@@ -68,12 +69,8 @@ button:active {
 	border: 2px solid #808080;
 }
 
-.CowDiv .DisplayDiv {
+.ScrollDiv .DisplayDiv {
     display: inline-block; /* Align items horizontally */
     padding: 8px; /* Optional: Add some padding for aesthetics */
     white-space: nowrap; /* Prevent content from wrapping */
-}
-
-.Space {
-    height: 5px;
 }
