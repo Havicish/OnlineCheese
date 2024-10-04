@@ -10,34 +10,36 @@
     <div class="DisplayDiv">
         <span>Time left: </span><span id="TimeLeft">300</span><span>s</span>
     </div>
-    <br>
     <div class="Line"></div>
     <br>
-    <div class="DisplayDiv">
-        <span>Cheese: </span><span id="CheeseCount">0</span><span>lbs</span>
-        <br>
-        <span>Milk: </span><span id="MilkCount">50</span><span>gals</span>
-		<br>
-        <div id="ChocoCowDiv">
-            <span>Chocolate Cheese: </span><span id="ChocoCheeseCount">0</span><span>lbs</span>
-            <br>
-            <span>Chocolate Milk: </span><span id="ChocoMilkCount">0</span><span>gals</span>
-        </div>
-        <button onclick="MakeCheeseFunc()">Make Cheese</button>
-        <div id="ChocoCowDiv">
-            <button onclick="MakeChocoCheeseFunc()">Make Chocolate Cheese</button>
-        </div>
-    </div>
+	<br>
+	<div class="ScrollDiv">
+	    <div class="DisplayDiv">
+	        <span>Cheese: </span><span id="CheeseCount">0</span><span>lbs</span>
+	        <br>
+	        <span>Milk: </span><span id="MilkCount">50</span><span>gals</span>
+			<br>
+			<button onclick="MakeCheeseFunc()">Make Cheese</button>
+		</div>
+		<div class="DisplayDiv">
+			<div id="ChocoCowDiv">
+				<span>Chocolate Cheese: </span><span id="ChocoCheeseCount">0</span><span>lbs</span>
+				<br>
+				<span>Chocolate Milk: </span><span id="ChocoMilkCount">0</span><span>gals</span>
+			</div>
+			<div id="ChocoCowDiv">
+				<button onclick="MakeChocoCheeseFunc()">Make Chocolate Cheese</button>
+			</div>
+		</div>
+	</div>
     <br>
-    <div class="Line"></div>
-    <br>
-	<div class="CowDiv">
+	<div class="ScrollDiv">
 		<div class="DisplayDiv">
 			<span>Cows: </span><span id="CowCount">1</span>
 			<br>
 			<button onclick="MilkCowFunc()">Milk Cow</button>
 			<br>
-			<button onclick="BuyCowFunc()">Buy Cow</button><span> Cost: </span><span id="PriceCow">10</span><span>lb of cheese</span>
+			<button onclick="BuyCowFunc()">Buy Cow</button><span> Cost: </span><span id="PriceCow">10</span><span>lbs of cheese</span>
 		</div>
 		<div class="DisplayDiv">
             <div id="ChocoCowDiv">
@@ -45,7 +47,7 @@
                 <br>
                 <button onclick="MilkChocoCowFunc()">Milk Chocolate Cow</button>
                 <br>
-                <button onclick="BuyChocoCowFunc()">Buy Chocolate Cow</button><span> Cost: </span><span id="PriceChocoCow">100</span><span>lb of cheese</span>
+                <button onclick="BuyChocoCowFunc()">Buy Chocolate Cow</button><span> Cost: </span><span id="PriceChocoCow">100</span><span>lbs of cheese</span>
             </div>
 		</div>
         <div class="DisplayDiv">
@@ -54,20 +56,31 @@
                 <br>
                 <button onclick="KillSpecCowFunc()">Kill Special Cow</button><span> Cost: 1 special cow</span>
                 <br>
-                <button onclick="FeedSpecCowFunc()">Feed Special Cow</button><span> Cost: </span><span id="PriceSpecCow">1</span><span>lb of cheese</span>
+                <button onclick="FeedSpecCowFunc()">Feed Special Cow</button><span> Cost: </span><span id="PriceSpecCow">2</span><span>gals of chocolate milk</span>
             </div>
 		</div>
 	</div>
     <br>
-    <div class="Line"></div>
-    <br>
-		<div class="DisplayDiv">
-			<span>Cheese/second: </span><span id="CheesePerSecond">0</span>
-			<br>
-			<span>CheeseMakers: </span><span id="CheeseMakerCount">0</span>
-			<br>
-			<button onclick="BuyCheeseMakerFunc()">Buy CheeseMaker</button><span> Cost: </span><span id="PriceCheeseMaker">20</span><span>lb of cheese</span>
+	<div id="CheeseMakerDiv">
+		<div class="ScrollDiv">
+			<div class="DisplayDiv">
+				<span>Cheese/second: </span><span id="CheesePerSecond">0</span>
+				<br>
+				<span>CheeseMakers: </span><span id="CheeseMakerCount">0</span>
+				<br>
+				<button onclick="BuyCheeseMakerFunc()">Buy CheeseMaker</button><span> Cost: </span><span id="PriceCheeseMaker">10</span><span>lbs of cheese</span>
+			</div>
+			<div class="DisplayDiv">
+				<div id="ChocoCowDiv">
+					<span>Chocolate Cheese/second: </span><span id="ChocoCheesePerSecond">0</span>
+					<br>
+					<span>Chocolate CheeseMakers: </span><span id="ChocoCheeseMakerCount">0</span>
+					<br>
+					<button onclick="BuyChocoCheeseMakerFunc()">Buy Chocolate CheeseMaker</button><span> Cost: </span><span id="PriceChocoCheeseMaker">10</span><span>lbs of chocolate cheese</span>
+				</div>
+			</div>
 		</div>
+	</div>
 
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
