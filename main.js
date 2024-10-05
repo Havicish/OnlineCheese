@@ -65,8 +65,8 @@ function Get(Id) {
     return document.getElementById(Id);
 }
 
-function GetAll(Selector) {
-    return document.querySelectorAll(Selector);
+function GetAll(Selector, Callback) {
+    document.querySelectorAll(Selector).forEach(Callback(Element));
 }
 
 function MakeCheeseFunc() {
@@ -217,13 +217,9 @@ function Frame() {
 		GetAll("button").forEach(button => {
 			button.style.color = "#808080";
 		});
-		/*GetAll("div").forEach(div => {
-			if (div.contains(document.activeElement)) {
-				div.style.color = "#fff";
-			} else {
-				div.style.color = "inherit";
-			}
-		});*/
+        GetAll("div:hover button").forEach(button => {
+			button.style.color = "#fff";
+		});
 	} else {
 		GetAll("body").forEach(body => {
 			body.style.color = "#fff";
@@ -231,9 +227,6 @@ function Frame() {
 		GetAll("button").forEach(button => {
 			button.style.color = "#fff";
 		});
-		/*GetAll("div").forEach(div => {
-			div.style.color = "inherit";
-		});*/
 	}
 
 	requestAnimationFrame(Frame);
