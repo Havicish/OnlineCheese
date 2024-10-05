@@ -1,4 +1,4 @@
-let Cheese = 0;
+let Cheese = 2500;
 let ChocoCheese = 0;
 let Milk = 50;
 let ChocoMilk = 0;
@@ -13,12 +13,14 @@ let ChocoCows = 0;
 let PriceChocoCow = 100;
 let SpecCows = 0;
 
-let ChocoCowUnlocked = true;
+let ChocoCowUnlocked = false;
 let SpecCowUnlocked = false;
-let CheeseMakerUnlocked = true;
+let CheeseMakerUnlocked = false;
+let StocksUnlocked = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     ShowUnlocks();
+	Frame();
 });
 
 function ShowUnlocks() {
@@ -31,7 +33,7 @@ function ShowUnlocks() {
         }
     });
 
-    elements = document.querySelectorAll("#SpecCowDiv");
+    elements = document.querySelectorAll("SpecCowDiv");
     elements.forEach(element => {
         if (!SpecCowUnlocked) {
             element.style.display = "none";
@@ -48,10 +50,23 @@ function ShowUnlocks() {
             element.style.display = "block";
         }
     });
+
+	elements = document.querySelectorAll("#StocksDiv");
+    elements.forEach(element => {
+        if (!StocksUnlocked) {
+            element.style.display = "none";
+        } else {
+            element.style.display = "block";
+        }
+    });
 }
 
 function Get(Id) {
     return document.getElementById(Id);
+}
+
+function GetAll(Selector) {
+    return document.querySelectorAll(Selector);
 }
 
 function MakeCheeseFunc() {
@@ -167,6 +182,8 @@ setInterval(() => {
 		CheeseMakerUnlocked = true;
 	if (Math.round(ChocoCheese) == 69)
 		SpecCowUnlocked = true;
+	if (Math.round(Cheese) >= 250)
+		StocksUnlocked = true;
     ShowUnlocks()
 
 	if (Milk >= CheeseMakers / 10 / 2) {
@@ -191,3 +208,33 @@ setInterval(() => {
     Time--;
     Get("TimeLeft").innerText = Math.round(Time / 10);
 }, 100);
+
+function Frame() {
+	if (Get("AdhdMode").checked) {
+		GetAll("body").forEach(body => {
+			body.style.color = "#808080";
+		});
+		GetAll("button").forEach(button => {
+			button.style.color = "#808080";
+		});
+		/*GetAll("div").forEach(div => {
+			if (div.contains(document.activeElement)) {
+				div.style.color = "#fff";
+			} else {
+				div.style.color = "inherit";
+			}
+		});*/
+	} else {
+		GetAll("body").forEach(body => {
+			body.style.color = "#fff";
+		});
+		GetAll("button").forEach(button => {
+			button.style.color = "#fff";
+		});
+		/*GetAll("div").forEach(div => {
+			div.style.color = "inherit";
+		});*/
+	}
+
+	requestAnimationFrame(Frame);
+}
